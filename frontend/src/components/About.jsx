@@ -106,7 +106,7 @@ export default function About() {
           Try the App
         </Link>
         <a
-          href="https://github.com/eholt/docsignal"
+          href="https://github.com/eholt723/docsignal"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-2.5 bg-gray-800 border border-gray-700 hover:border-cyan-600 text-gray-300 hover:text-white text-sm font-medium rounded-lg transition-colors"
