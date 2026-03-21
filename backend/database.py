@@ -12,8 +12,14 @@ def get_conn():
     return conn
 
 
+def _plain_conn():
+    """Connection without vector registration — used before extension exists."""
+    return psycopg2.connect(DATABASE_URL)
+
+
 def init_db():
-    conn = get_conn()
+    # Create extension first using a plain connection (vector type not yet registered)
+    conn = _plain_conn()
     cur = conn.cursor()
     cur.execute("CREATE EXTENSION IF NOT EXISTS vector;")
     cur.execute("""
