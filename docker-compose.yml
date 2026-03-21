@@ -21,7 +21,7 @@ services:
       - "7860:7860"
     environment:
       DATABASE_URL: postgresql://postgres:postgres@db:5432/docsignal
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GROQ_API_KEY: ${GROQ_API_KEY}
       EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-fastembed}
     depends_on:
       db:

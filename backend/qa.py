@@ -1,13 +1,18 @@
 """
 Q&A pipeline: retrieve top-k chunks via similarity search, synthesize answer
-with gpt-4o-mini, return answer + cited sources.
+with Groq (llama-3.1-8b-instant), return answer + cited sources.
 """
+import os
 from openai import OpenAI
 from backend.embeddings import embed_query
 from backend.database import similarity_search, log_query
 from backend.models import Citation
 
-client = OpenAI()
+client = OpenAI(
+    base_url="https://api.groq.com/openai/v1",
+    api_key=os.environ["GROQ_API_KEY"],
+)
+LLM_MODEL = "llama-3.1-8b-instant"
 
 SYSTEM_PROMPT = """\
 You are a precise documentation assistant. Answer the user's question using ONLY the provided context passages.
@@ -56,7 +61,7 @@ def _build_context(chunks: list[dict]) -> str:
 
 def _synthesize(question: str, context: str) -> str:
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model=LLM_MODEL,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {question}"},
