@@ -12,11 +12,11 @@ const pipeline = [
 const achievements = [
   "End-to-end vector search pipeline: ingest → chunk → embed → store → retrieve",
   "pgvector cosine similarity search over 500–800 chunk embeddings per doc set",
+  "Embedding provider switchable between fastembed (local, free) and OpenAI — no code changes required",
   "Three pre-loaded documentation sets (FastAPI, SQLite, Requests) with zero setup",
   "PDF upload and URL crawl ingestion with configurable depth limit",
   "Groq LLM Q&A synthesis (llama-3.1-8b-instant) with cited source passages and similarity scores",
   "Analytics dashboard: query frequency, source heatmap, volume over time",
-  "Embedding provider switchable between fastembed (local, free) and OpenAI",
   "Deployed to Hugging Face Spaces with Neon serverless PostgreSQL",
 ];
 
@@ -73,7 +73,7 @@ export default function About() {
 
       {/* Enterprise Use Cases */}
       <div>
-        <h2 className="text-lg font-semibold text-white mb-2">Real-World Applications</h2>
+        <h2 className="text-lg font-semibold text-white mb-2">Where This Gets Used</h2>
         <p className="text-sm text-gray-400 mb-6">
           Every business drowns in documents nobody reads. DocSignal turns any collection of PDFs, policies, or manuals into a system that answers questions instantly — with the exact source cited. Here's where it fits.
         </p>

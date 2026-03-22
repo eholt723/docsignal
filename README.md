@@ -184,6 +184,29 @@ The app creates all tables on first startup.
 
 ---
 
+## Design Decisions
+
+**`httpx` over Playwright for crawling**
+
+The URL crawler uses `httpx` + `BeautifulSoup` rather than a headless browser. This was a deliberate infrastructure tradeoff:
+
+- Playwright requires a full Chromium binary (~300MB), which significantly increases Docker image size and memory usage on constrained hosting
+- On Hugging Face Spaces free tier, running a headless browser per page would likely exhaust available RAM mid-crawl and exceed request timeouts
+- The three pre-loaded doc sets (FastAPI, SQLite, Requests) all serve fully-rendered static HTML, so `httpx` retrieves complete content without JavaScript execution
+
+On production infrastructure with dedicated crawl workers, Playwright would be the correct choice — it handles JavaScript-rendered documentation sites (e.g., LangChain, many modern doc platforms) that `httpx` cannot parse correctly.
+
+---
+
+## Future Improvements
+
+- **Playwright-based crawler** — replace `httpx` with a headless browser for JavaScript-rendered doc sites; run as a background async job to avoid request timeouts
+- **Chunk deduplication** — hash chunk text before insert to prevent duplicate embeddings when seed URLs overlap
+- **Re-ingestion endpoint** — allow refreshing a doc set without manually deleting from the database
+- **Streaming answers** — stream LLM tokens to the frontend for faster perceived response time
+
+---
+
 ## Running Tests
 
 ```bash
