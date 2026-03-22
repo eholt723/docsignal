@@ -4,7 +4,7 @@ from backend.ingestion import _chunk_text, CHUNK_CHARS, OVERLAP_CHARS
 
 
 def test_chunk_short_text():
-    text = "This is a short sentence."
+    text = "This is a short sentence that is long enough to pass the fifty character minimum filter."
     chunks = _chunk_text(text)
     assert len(chunks) == 1
     assert chunks[0] == text

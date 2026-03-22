@@ -10,7 +10,7 @@ from backend.models import Citation
 
 client = OpenAI(
     base_url="https://api.groq.com/openai/v1",
-    api_key=os.environ["GROQ_API_KEY"],
+    api_key=os.environ.get("GROQ_API_KEY", ""),
 )
 LLM_MODEL = "llama-3.1-8b-instant"
 
