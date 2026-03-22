@@ -94,11 +94,11 @@ def similarity_search(query_embedding, doc_set: str | None, top_k: int) -> list[
         cur.execute(
             """
             SELECT c.id AS chunk_id, d.doc_name, d.source_url,
-                   c.text, 1 - (c.embedding <=> %s) AS similarity
+                   c.text, 1 - (c.embedding <=> %s::vector) AS similarity
             FROM chunks c
             JOIN documents d ON d.id = c.doc_id
             WHERE d.doc_set = %s
-            ORDER BY c.embedding <=> %s
+            ORDER BY c.embedding <=> %s::vector
             LIMIT %s;
             """,
             (query_embedding, doc_set, query_embedding, top_k),
@@ -107,10 +107,10 @@ def similarity_search(query_embedding, doc_set: str | None, top_k: int) -> list[
         cur.execute(
             """
             SELECT c.id AS chunk_id, d.doc_name, d.source_url,
-                   c.text, 1 - (c.embedding <=> %s) AS similarity
+                   c.text, 1 - (c.embedding <=> %s::vector) AS similarity
             FROM chunks c
             JOIN documents d ON d.id = c.doc_id
-            ORDER BY c.embedding <=> %s
+            ORDER BY c.embedding <=> %s::vector
             LIMIT %s;
             """,
             (query_embedding, query_embedding, top_k),
