@@ -34,7 +34,7 @@ PRESETS = {
         "example_questions": [
             "What's the difference between TEXT, REAL, and INTEGER storage classes in SQLite?",
             "How do I use a CTE and when is it better than a subquery?",
-            "How does SQLite handle concurrent reads and writes?",
+            "What is WAL mode and how do I enable it?",
         ],
     },
     "requests": {
