@@ -12,7 +12,7 @@ const pipeline = [
 const achievements = [
   "End-to-end vector search pipeline: ingest → chunk → embed → store → retrieve",
   "pgvector cosine similarity search over 500–800 chunk embeddings per doc set",
-  "Three pre-loaded documentation sets (FastAPI, LangChain, PostgreSQL) with zero setup",
+  "Three pre-loaded documentation sets (FastAPI, SQLite, Requests) with zero setup",
   "PDF upload and URL crawl ingestion with configurable depth limit",
   "GPT-4o-mini Q&A synthesis with cited source passages and similarity scores",
   "Analytics dashboard: query frequency, source heatmap, volume over time",

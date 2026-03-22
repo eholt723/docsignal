@@ -4,15 +4,15 @@ const EXAMPLES = {
     "What's the difference between async def and def route handlers and when does it matter?",
     "How do I implement OAuth2 password flow with JWT tokens?",
   ],
-  langchain: [
-    "What's the difference between a Chain and an Agent and when should I use each?",
-    "How do I add memory to a conversational chain so it remembers previous messages?",
-    "How does LangChain handle streaming responses from an LLM?",
+  sqlite: [
+    "What's the difference between TEXT, REAL, and INTEGER storage classes in SQLite?",
+    "How do I use a CTE and when is it better than a subquery?",
+    "How does SQLite handle concurrent reads and writes?",
   ],
-  postgresql: [
-    "What's the difference between an inner join and a left join and when would I use each?",
-    "How do indexes work and how do I know when to add one?",
-    "What is a CTE and how is it different from a subquery?",
+  requests: [
+    "How do I send authentication headers with a request?",
+    "What's the difference between params and data in a POST request?",
+    "How do I handle timeouts and retries?",
   ],
 };
 

@@ -133,6 +133,16 @@ def log_query(query_text: str, doc_set: str | None, top_similarity: float | None
     conn.close()
 
 
+def doc_set_exists(doc_set: str) -> bool:
+    conn = get_conn()
+    cur = conn.cursor()
+    cur.execute("SELECT EXISTS(SELECT 1 FROM documents WHERE doc_set = %s);", (doc_set,))
+    result = cur.fetchone()[0]
+    cur.close()
+    conn.close()
+    return result
+
+
 def get_document_by_name(doc_name: str) -> dict | None:
     conn = get_conn()
     cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)

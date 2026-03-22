@@ -1,8 +1,8 @@
 export default function PresetBar({ activePreset, onSelect }) {
   const presets = [
     { key: "fastapi", label: "FastAPI" },
-    { key: "langchain", label: "LangChain" },
-    { key: "postgresql", label: "PostgreSQL" },
+    { key: "sqlite", label: "SQLite" },
+    { key: "requests", label: "Requests" },
   ];
 
   return (
