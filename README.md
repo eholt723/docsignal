@@ -1,3 +1,12 @@
+---
+title: DocSignal
+emoji: 📄
+colorFrom: cyan
+colorTo: blue
+sdk: docker
+pinned: false
+---
+
 # DocSignal
 
 AI-powered documentation intelligence. Ask natural language questions against any documentation set — DocSignal finds the meaning, not just the keywords.
