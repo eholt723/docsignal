@@ -27,6 +27,7 @@ PRESETS = {
     "postgresql": {
         "doc_name": "PostgreSQL Docs",
         "url": "https://www.postgresql.org/docs/current/tutorial.html",
+        "max_pages": 40,
         "example_questions": [
             "What's the difference between an inner join and a left join and when would I use each?",
             "How do indexes work and how do I know when to add one?",
@@ -62,7 +63,7 @@ def ingest_preset(preset_key: str) -> dict:
         url=preset["url"],
         doc_name=preset["doc_name"],
         doc_set=preset_key,
-        max_pages=100,
+        max_pages=preset.get("max_pages", 100),
     )
     return result
 
