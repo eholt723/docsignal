@@ -78,7 +78,7 @@ export default function App() {
                 <div>
                   <h1 className="text-2xl font-bold text-white mb-1">Ingest documents</h1>
                   <p className="text-sm text-gray-400">
-                    Add your own documentation via URL or PDF upload.
+                    Bring your own docs — paste a URL or upload a PDF, then ask questions against it directly on this page.
                   </p>
                 </div>
                 <UploadPanel />

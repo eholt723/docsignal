@@ -81,8 +81,10 @@ export default function UploadPanel({ onIngested }) {
       <div className="flex flex-col gap-2">
         <p className="text-xs text-gray-500 uppercase tracking-wide">Ingest from URL</p>
         <p className="text-xs text-gray-600">
-          Crawls up to 25 pages from the URL. For best results, link directly to a docs index page.
-          Pre-loaded presets use a higher limit for broader coverage.
+          Crawls up to 25 pages from the starting URL. Works best with static documentation sites.
+        </p>
+        <p className="text-xs text-gray-600">
+          <span className="text-gray-500">Example:</span> https://docs.python-requests.org/en/latest/user/quickstart/
         </p>
         <div className="flex gap-2">
           <input
@@ -111,6 +113,13 @@ export default function UploadPanel({ onIngested }) {
       {/* PDF ingestion */}
       <div className="flex flex-col gap-2">
         <p className="text-xs text-gray-500 uppercase tracking-wide">Upload PDF</p>
+        <p className="text-xs text-gray-600">
+          Upload any technical PDF — API references, whitepapers, internal docs, or your own notes.
+        </p>
+        <p className="text-xs text-gray-600">
+          <span className="text-gray-500">Example:</span> download a library's PDF from ReadTheDocs (look for the
+          {" "}<span className="text-gray-400">v: latest</span>{" "}menu at the bottom left of any ReadTheDocs site).
+        </p>
         <div className="flex gap-2">
           <label className="flex-1 cursor-pointer bg-gray-800 border border-dashed border-gray-700 rounded-lg px-4 py-2 text-sm text-gray-400 hover:border-cyan-600 transition-colors">
             {file ? file.name : "Click to choose a PDF file"}
