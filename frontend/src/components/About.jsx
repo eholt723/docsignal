@@ -71,6 +71,47 @@ export default function About() {
         </div>
       </div>
 
+      {/* Enterprise Use Cases */}
+      <div>
+        <h2 className="text-lg font-semibold text-white mb-2">Real-World Applications</h2>
+        <p className="text-sm text-gray-400 mb-6">
+          The same pipeline powering this demo can be applied to any business that has documents people need to search through. Instead of employees spending hours digging through manuals, policies, or reports — they ask a question and get a direct answer with the exact source cited.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {[
+            {
+              title: "Internal Knowledge Base",
+              desc: "Point it at your company's HR policies, IT procedures, or employee handbook. New hires ask questions in plain English instead of reading 200-page PDFs.",
+            },
+            {
+              title: "Legal & Compliance",
+              desc: "Upload contracts, regulations, or compliance documents. Ask 'what are the termination conditions in this contract?' and get the exact clause cited.",
+            },
+            {
+              title: "Customer Support",
+              desc: "Ingest your product documentation and support teams can instantly find answers to customer questions — with the exact page of the manual referenced.",
+            },
+            {
+              title: "Research & Reports",
+              desc: "Upload industry reports, whitepapers, or research papers. Ask questions across hundreds of pages of content without reading every word.",
+            },
+            {
+              title: "Technical Documentation",
+              desc: "Engineering teams point it at internal wikis, API docs, or runbooks. Ask 'how do we deploy to production?' and get the step sourced directly from the doc.",
+            },
+            {
+              title: "Training Materials",
+              desc: "Upload training guides, SOPs, or certification materials. Employees get instant answers during onboarding without waiting for a manager to respond.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="bg-gray-800 border border-gray-700 rounded-xl px-4 py-4">
+              <p className="text-sm font-medium text-white mb-1">{item.title}</p>
+              <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* What Was Built */}
       <div>
         <h2 className="text-lg font-semibold text-white mb-4">What Was Built</h2>
