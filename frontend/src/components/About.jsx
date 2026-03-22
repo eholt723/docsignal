@@ -29,7 +29,7 @@ const stack = [
   { name: "React + Vite", role: "Frontend UI" },
   { name: "Tailwind CSS", role: "Styling" },
   { name: "Recharts", role: "Analytics charts" },
-  { name: "Docker", role: "Local development environment" },
+  { name: "Docker", role: "Containerized deployment" },
   { name: "Hugging Face Spaces", role: "Production hosting" },
 ];
 
