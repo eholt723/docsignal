@@ -62,7 +62,7 @@ def ingest_preset(preset_key: str) -> dict:
         url=preset["url"],
         doc_name=preset["doc_name"],
         doc_set=preset_key,
-        max_pages=50,
+        max_pages=100,
     )
     return result
 

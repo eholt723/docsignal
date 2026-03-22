@@ -53,7 +53,11 @@ export default function UploadPanel({ onIngested }) {
     <div className="flex flex-col gap-4">
       {/* URL ingestion */}
       <div className="flex flex-col gap-2">
-        <p className="text-xs text-gray-500 uppercase tracking-wide">Ingest from URL (max 25 pages)</p>
+        <p className="text-xs text-gray-500 uppercase tracking-wide">Ingest from URL</p>
+        <p className="text-xs text-gray-600">
+          Crawls up to 25 pages from the URL. For best results, link directly to a docs index page.
+          Pre-loaded presets use a higher limit for broader coverage.
+        </p>
         <div className="flex gap-2">
           <input
             type="url"
