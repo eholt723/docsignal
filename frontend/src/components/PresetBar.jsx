@@ -3,6 +3,7 @@ export default function PresetBar({ activePreset, onSelect }) {
     { key: "fastapi", label: "FastAPI" },
     { key: "sqlite", label: "SQLite" },
     { key: "requests", label: "Requests" },
+    { key: null, label: "All Docs" },
   ];
 
   return (
