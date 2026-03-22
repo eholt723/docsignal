@@ -7,6 +7,8 @@ sdk: docker
 pinned: false
 ---
 
+![CI](https://github.com/eholt723/docsignal/actions/workflows/ci.yml/badge.svg)
+
 # DocSignal
 
 AI-powered documentation intelligence. Ask natural language questions against any documentation set — DocSignal finds the meaning, not just the keywords.
@@ -19,7 +21,7 @@ A keyword search for "authentication" returns every page that mentions the word.
 
 ## Features
 
-- Ask questions against FastAPI, LangChain, and PostgreSQL docs out of the box — no setup
+- Ask questions against FastAPI, SQLite, and Requests docs out of the box — no setup
 - Upload any PDF or crawl any URL (up to 25 pages) to build a custom doc set
 - Every answer includes cited source passages with similarity scores
 - Analytics dashboard: query frequency, top sources, volume over time, similarity distribution
@@ -108,7 +110,7 @@ docsignal/
 │   └── src/
 │       ├── App.jsx
 │       └── components/
-│           ├── PresetBar.jsx        # FastAPI / LangChain / PostgreSQL selector
+│           ├── PresetBar.jsx        # FastAPI / SQLite / Requests selector
 │           ├── ExampleQuestions.jsx # Clickable example question chips
 │           ├── AskPanel.jsx         # Q&A input, answer display, citations
 │           ├── UploadPanel.jsx      # PDF upload and URL ingestion form

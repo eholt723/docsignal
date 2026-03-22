@@ -6,7 +6,7 @@ const pipeline = [
   { step: "3", title: "Each chunk is embedded", desc: "A local embedding model converts every passage into a 384-dimensional vector — a numerical fingerprint of its meaning." },
   { step: "4", title: "Vectors are stored in pgvector", desc: "The embeddings are stored in PostgreSQL with the pgvector extension, enabling fast cosine similarity search at scale." },
   { step: "5", title: "You ask a question", desc: "Your question is embedded the same way, then compared against every stored chunk using cosine similarity." },
-  { step: "6", title: "Answer + cited sources", desc: "The top matching passages are fed to GPT-4o-mini, which synthesizes a direct answer and shows you exactly where it came from." },
+  { step: "6", title: "Answer + cited sources", desc: "The top matching passages are fed to an LLM, which synthesizes a direct answer and shows you exactly where it came from." },
 ];
 
 const achievements = [
@@ -14,7 +14,7 @@ const achievements = [
   "pgvector cosine similarity search over 500–800 chunk embeddings per doc set",
   "Three pre-loaded documentation sets (FastAPI, SQLite, Requests) with zero setup",
   "PDF upload and URL crawl ingestion with configurable depth limit",
-  "GPT-4o-mini Q&A synthesis with cited source passages and similarity scores",
+  "Groq LLM Q&A synthesis (llama-3.1-8b-instant) with cited source passages and similarity scores",
   "Analytics dashboard: query frequency, source heatmap, volume over time",
   "Embedding provider switchable between fastembed (local, free) and OpenAI",
   "Deployed to Hugging Face Spaces with Neon serverless PostgreSQL",
@@ -25,7 +25,7 @@ const stack = [
   { name: "pgvector", role: "Vector similarity search" },
   { name: "PostgreSQL / Neon", role: "Relational + vector database" },
   { name: "fastembed", role: "Local embedding model (BAAI/bge-small-en-v1.5)" },
-  { name: "GPT-4o-mini", role: "Answer synthesis" },
+  { name: "Groq", role: "LLM answer synthesis (llama-3.1-8b-instant)" },
   { name: "React + Vite", role: "Frontend UI" },
   { name: "Tailwind CSS", role: "Styling" },
   { name: "Recharts", role: "Analytics charts" },

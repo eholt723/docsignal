@@ -17,8 +17,8 @@ def test_get_presets(client):
     assert resp.status_code == 200
     data = resp.json()
     assert "fastapi" in data
-    assert "langchain" in data
-    assert "postgresql" in data
+    assert "sqlite" in data
+    assert "requests" in data
     for key, preset in data.items():
         assert "doc_name" in preset
         assert "example_questions" in preset
