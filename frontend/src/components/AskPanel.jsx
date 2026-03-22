@@ -66,7 +66,7 @@ export default function AskPanel({ activePreset, prefillQuestion, onQuestionClea
         <div className="flex flex-col gap-3">
           <div className="bg-gray-800 border border-gray-700 rounded-xl px-5 py-4">
             <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Answer</p>
-            <p className="text-sm text-gray-100 whitespace-pre-wrap leading-relaxed">{result.answer}</p>
+            <p className="text-sm text-gray-100 whitespace-pre-wrap leading-relaxed break-words">{result.answer}</p>
           </div>
 
           {result.citations?.length > 0 && (
@@ -84,7 +84,13 @@ export default function AskPanel({ activePreset, prefillQuestion, onQuestionClea
                   {result.citations.map((c, i) => (
                     <div key={i} className="px-5 py-3">
                       <div className="flex justify-between items-center mb-1">
-                        <span className="text-xs font-medium text-cyan-500">{c.doc_name}</span>
+                        {c.source_url ? (
+                          <a href={c.source_url} target="_blank" rel="noopener noreferrer" className="text-xs font-medium text-cyan-500 hover:text-cyan-400 underline underline-offset-2">
+                            {c.doc_name}
+                          </a>
+                        ) : (
+                          <span className="text-xs font-medium text-cyan-500">{c.doc_name}</span>
+                        )}
                         <span className="text-xs text-gray-500">
                           similarity: {(c.similarity * 100).toFixed(1)}%
                         </span>
