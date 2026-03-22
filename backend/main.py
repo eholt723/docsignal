@@ -134,6 +134,10 @@ STATIC_DIR = os.path.join(os.path.dirname(__file__), "..", "static")
 if os.path.isdir(STATIC_DIR):
     app.mount("/assets", StaticFiles(directory=os.path.join(STATIC_DIR, "assets")), name="assets")
 
+    @app.get("/favicon.svg")
+    def serve_favicon():
+        return FileResponse(os.path.join(STATIC_DIR, "favicon.svg"))
+
     @app.get("/{full_path:path}")
     def serve_spa(full_path: str):
         index = os.path.join(STATIC_DIR, "index.html")
