@@ -8,7 +8,7 @@ from backend.ingestion import ingest_url
 PRESETS = {
     "fastapi": {
         "doc_name": "FastAPI Docs",
-        "url": "https://fastapi.tiangolo.com/",
+        "url": "https://fastapi.tiangolo.com/tutorial/",
         "example_questions": [
             "How does dependency injection work and when should I use it over regular function parameters?",
             "What's the difference between async def and def route handlers and when does it matter?",
@@ -17,7 +17,7 @@ PRESETS = {
     },
     "langchain": {
         "doc_name": "LangChain Docs",
-        "url": "https://python.langchain.com/docs/",
+        "url": "https://python.langchain.com/docs/how_to/",
         "example_questions": [
             "What's the difference between a Chain and an Agent and when should I use each?",
             "How do I add memory to a conversational chain so it remembers previous messages?",
@@ -26,7 +26,7 @@ PRESETS = {
     },
     "postgresql": {
         "doc_name": "PostgreSQL Docs",
-        "url": "https://www.postgresql.org/docs/current/",
+        "url": "https://www.postgresql.org/docs/current/tutorial.html",
         "example_questions": [
             "What's the difference between an inner join and a left join and when would I use each?",
             "How do indexes work and how do I know when to add one?",
@@ -62,7 +62,7 @@ def ingest_preset(preset_key: str) -> dict:
         url=preset["url"],
         doc_name=preset["doc_name"],
         doc_set=preset_key,
-        max_pages=25,
+        max_pages=50,
     )
     return result
 
