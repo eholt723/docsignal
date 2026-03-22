@@ -28,7 +28,8 @@ PRESETS = {
             {"url": "https://www.sqlite.org/lang.html", "max_pages": 20},
             {"url": "https://www.sqlite.org/datatype3.html", "max_pages": 5},
             {"url": "https://www.sqlite.org/lang_with.html", "max_pages": 5},
-            {"url": "https://www.sqlite.org/queryplanner.html", "max_pages": 5},
+            {"url": "https://www.sqlite.org/lockingv3.html", "max_pages": 5},
+            {"url": "https://www.sqlite.org/wal.html", "max_pages": 5},
         ],
         "example_questions": [
             "What's the difference between TEXT, REAL, and INTEGER storage classes in SQLite?",
