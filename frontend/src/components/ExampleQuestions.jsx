@@ -1,7 +1,7 @@
 const EXAMPLES = {
   fastapi: [
     "How does dependency injection work and when should I use it over regular function parameters?",
-    "What's the difference between async def and def route handlers and when does it matter?",
+    "How do I define and validate request bodies using Pydantic models?",
     "How do I implement OAuth2 password flow with JWT tokens?",
   ],
   sqlite: [
