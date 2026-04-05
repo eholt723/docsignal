@@ -7,7 +7,7 @@ sdk: docker
 pinned: false
 ---
 
-![CI](https://github.com/eholt723/docsignal/actions/workflows/ci.yml/badge.svg)
+![CI/CD](https://github.com/eholt723/docsignal/actions/workflows/ci.yml/badge.svg)
 
 # DocSignal
 
@@ -166,6 +166,12 @@ curl -X POST http://localhost:8000/api/presets/fastapi/ingest
 | `DATABASE_URL` | Yes | PostgreSQL connection string |
 | `GROQ_API_KEY` | Yes | Groq API key — free at console.groq.com |
 | `EMBEDDING_PROVIDER` | No | `fastembed` (default) or `openai` |
+
+---
+
+## Deployment
+
+Every push to `main` triggers the CI/CD pipeline. If all checks pass, the workflow automatically pushes the latest code to Hugging Face Spaces. The live app is available at [huggingface.co/spaces/eholt723/docsignal](https://huggingface.co/spaces/eholt723/docsignal).
 
 ---
 
